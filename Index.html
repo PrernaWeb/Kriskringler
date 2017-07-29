@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>KrisKringler</title>
+
+    <!-- Bootstrap -->
+    <!-- link href="css/bootstrap.min.css" rel="stylesheet" -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- Bootstrap -->
+        
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <style>
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: lightgrey;
+      }
+
+      #list {
+        background-color: green;
+        color: blue;
+      }
+
+    li {
+      color: green;  
+    } 
+
+     li:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        position: relative;
+        margin-right: 10px;
+        top: 3px;
+        color: #ccc;
+    }
+  
+    </style>
+  
+    </head>
+
+    <body>
+    
+    <div id="to-do">
+        <form class="form-inline">
+            <input class="form-control" type="text" id ="input" placeholder ="I need to...">
+            <button class="btn btn-primary" id ="add" type="submit">Add Item</button>
+        </form>
+
+       <!-- <ul id="list"></ul> -->
+      <div class="container">
+        <h2>Kris Kringlers</h2>
+
+          <ul class="list-group" id="list"></ul>
+
+      </div>
+        
+    </div>
+
+
+        <script>
+            
+            $(function() {
+
+
+                // configuration
+
+                // button
+                var add = $('#add');
+
+                // list container
+                var listContainer = $('#list');
+
+                //Array of Kris Kringlers
+                var kringlerArray = [];
+
+                  // debug 
+                var testvar = "";
+
+                // click event for button
+
+                add.on('click', function() {
+
+                     event.preventDefault(); // stop default behaviour of submit button
+                    // value of input
+                    inputValue = $('#input').val();
+
+                    testvar = inputValue;
+                    console.log("After Input value " + testvar);
+
+                    // add new list item
+                    //list group item appended here
+                    listContainer.prepend('<li class="list-group-item"> ' + inputValue + '</li>');
+
+                     // store name in array for later
+                    kringlerArray[kringlerArray.length] = testvar;
+
+                    console.log("After prepend " + testvar);
+                    console.log("Array " + kringlerArray);
+                    // clear value input
+                    $('#input').val('');
+
+
+
+                });
+
+            });
+
+
+        </script>
+
+    </body>
+
+</html>    
