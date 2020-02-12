@@ -45,4 +45,6 @@ while goodShuffle == False:
         
 for x in range(0, len(namesArray)):
         print (namesArray[x] + " is buying for " + namesShuffle[x]) #list it out
+
+[print(i) for i in namesArray]
     
