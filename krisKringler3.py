@@ -56,5 +56,5 @@ for x in range(0, len(namesArray)):
 print("break")
 [print(i) for i in namesShuffle]
 print("break")
-for (i,s) in zip(namesArray,namesShuffle):
+for (i,s) in zip(namesArray,namesShuffle): # I love iterators! Yessss!!! Loop through the 
     print(i + " is buying for ", s)    
