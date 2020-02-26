@@ -2,8 +2,14 @@
 
 import random
 import sys
+#import itertools
 
 py3 = sys.version_info[0] > 2 #creates boolean value for test that python major version > 2
+
+if py3:
+    print("Python 3")
+else:
+    print("Python 2")
 
 
 def shuffle(listToShuffle): #not sure why I made this a function as its only called from one place, but it was fun
@@ -45,4 +51,10 @@ while goodShuffle == False:
         
 for x in range(0, len(namesArray)):
         print (namesArray[x] + " is buying for " + namesShuffle[x]) #list it out
-    
+
+[print(i) for i in namesArray]
+print("break")
+[print(i) for i in namesShuffle]
+print("break")
+for (i,s) in zip(namesArray,namesShuffle): # I love iterators! Yessss!!! Loop through the 
+    print(i + " is buying for ", s)    
